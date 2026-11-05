@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Angeliz e a Escola Sob o Jardim, de Evellyn Pinheiro.">
+  <title>Angeliz e a Escola Sob o Jardim</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <a class="logo" href="#inicio">
+      ✦ ANGELIZ
+      <small>e a Escola Sob o Jardim</small>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="menu">
+      <a href="#historia">A história</a>
+      <a href="#personagens">Personagens</a>
+      <a href="#magia">Magia</a>
+      <a href="#autora">A autora</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="inicio" id="inicio">
+      <div class="estrelas">✦　 ✧　✦　　✧</div>
+
+      <p class="subtitulo">✧ UMA AVENTURA ENCANTADA ✧</p>
+
+      <h1>Angeliz e a<br>Escola Sob<br><em>o Jardim</em></h1>
+
+      <p class="descricao">
+        Uma garota curiosa, um jardim cheio de segredos e uma escola de magia
+        escondida debaixo da terra. A aventura está apenas começando!
+      </p>
+
+      <div class="botoes">
+        <a class="botao" href="#historia">Descobrir a história ✧</a>
+        <button class="botao botao-secundario" id="botao-magia">Fazer magia ✨</button>
+      </div>
+
+      <div class="portal">
+        <span>☽</span>
+        <h2>ESCOLA<br>DE MAGIA</h2>
+        <p>Somente para bruxos</p>
+      </div>
+
+      <p class="frase">“Há segredos que florescem onde ninguém imagina.”</p>
+    </section>
+
+    <section class="historia secao" id="historia">
+      <p class="subtitulo">O COMEÇO DE TUDO</p>
+      <h2>Uma descoberta<br><em>de outro mundo.</em></h2>
+
+      <p>
+        Angeliz tem quinze anos, é vaidosa, aventureira e apaixonada por
+        coisas novas. Em uma tarde ensolarada, ela percebe pequenas luzes
+        azuladas perto de uma árvore antiga no jardim de casa.
+      </p>
+
+      <p>
+        Ao afastar as folhas, encontra uma passagem secreta. Uma escadaria
+        de pedra a leva até um enorme portão dourado, onde aparecem palavras
+        misteriosas: Escola de Magia — Somente para Bruxos.
+      </p>
+
+      <p>
+        Sem pensar duas vezes, Angeliz abre o portão. Ela está prestes a
+        descobrir um mundo que jamais imaginou existir.
+      </p>
+
+      <blockquote>
+        “Uma escola de magia? Debaixo da minha casa?! Como é que ninguém me contou isso?!”
+        <span>— Angeliz</span>
+      </blockquote>
+    </section>
+
+    <section class="personagens secao" id="personagens">
+      <p class="subtitulo">GENTE EXTRAORDINÁRIA</p>
+      <h2>Conheça os <em>personagens</em></h2>
+      <p class="apoio">Toda aventura fica melhor com amigos e um pouquinho de confusão!</p>
+
+      <div class="cartoes">
+        <article class="cartao">
+          <div class="retrato angeliz">A</div>
+          <h3>Angeliz</h3>
+          <p>Vaidosa, curiosa e destemida. Seus feitiços nem sempre saem como planejado!</p>
+        </article>
+
+        <article class="cartao">
+          <div class="retrato manoel">M</div>
+          <h3>Manoel</h3>
+          <p>Divertido e bem-humorado, ele acompanha Angeliz em suas primeiras aventuras mágicas.</p>
+        </article>
+
+        <article class="cartao">
+          <div class="retrato sofia">S</div>
+          <h3>Sofia</h3>
+          <p>Inteligente e prestativa, ajuda Angeliz a entender a escola e controlar seus feitiços.</p>
+        </article>
+
+        <article class="cartao">
+          <div class="retrato morgana">M</div>
+          <h3>Professora Morgana</h3>
+          <p>Mestra dos Feitiços Básicos, ela logo percebe que Angeliz é uma aluna incomum.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="magia secao" id="magia">
+      <p class="subtitulo">ANOTE NO SEU GRIMÓRIO</p>
+      <h2>As primeiras lições<br>de <em>magia</em></h2>
+
+      <div class="feiticos">
+        <article>
+          <span>☼</span>
+          <div>
+            <h3>Lumos</h3>
+            <p>Faz pequenos objetos brilharem. Pelo menos, em teoria!</p>
+          </div>
+        </article>
+
+        <article>
+          <span>✧</span>
+          <div>
+            <h3>Levitare</h3>
+            <p>Faz uma flor flutuar no ar. Ou talvez todas as flores da sala!</p>
+          </div>
+        </article>
+
+        <article>
+          <span>〰</span>
+          <div>
+            <h3>Finite Magica</h3>
+            <p>Ajuda a desfazer a magia quando tudo sai do controle.</p>
+          </div>
+        </article>
+      </div>
+
+      <button class="botao" id="botao-feitico">Revelar um feitiço ✨</button>
+      <p id="resultado-feitico" aria-live="polite">Clique para descobrir um feitiço!</p>
+    </section>
+
+    <section class="autora secao" id="autora">
+      <div class="selo">✦<strong>EP</strong><small>UM MUNDO DE IMAGINAÇÃO</small></div>
+
+      <div>
+        <p class="subtitulo">POR TRÁS DAS PÁGINAS</p>
+        <h2>Uma história criada por<br><em>Evellyn Pinheiro</em></h2>
+        <p>
+          Entre jardins secretos, portões dourados e feitiços inesperados,
+          nasce uma aventura sobre curiosidade, amizade e a coragem de
+          descobrir o desconhecido.
+        </p>
+        <p class="assinatura">EVELLYN PINHEIRO ✧</p>
+      </div>
+    </section>
+
+    <section class="final">
+      <p class="subtitulo">A MAGIA ESTÁ SÓ COMEÇANDO</p>
+      <h2>Que segredos você<br>encontraria <em>sob o jardim?</em></h2>
+      <a class="botao botao-claro" href="#inicio">Voltar ao portal ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>✦ ANGELIZ E A ESCOLA SOB O JARDIM</p>
+    <p>© <span id="ano"></span> Evellyn Pinheiro</p>
+    <p>Feito com um toque de magia ✨</p>
+  </footer>
+</body>
+</html>

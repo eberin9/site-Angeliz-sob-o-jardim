@@ -1,0 +1,127 @@
+// Angeliz e a Escola Sob o Jardim
+// Criado para o site de Evellyn Pinheiro
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+// Menu para celular
+menuToggle.addEventListener("click", () => {
+  const aberto = menu.classList.toggle("aberto");
+
+  menuToggle.textContent = aberto ? "×" : "☰";
+  menuToggle.setAttribute("aria-expanded", aberto);
+  menuToggle.setAttribute(
+    "aria-label",
+    aberto ? "Fechar menu" : "Abrir menu"
+  );
+});
+
+// Fecha o menu quando um link é clicado
+document.querySelectorAll(".menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("aberto");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+  });
+});
+
+// Atualiza o ano automaticamente
+document.querySelector("#ano").textContent =
+  new Date().getFullYear();
+
+// Efeito de partículas mágicas
+function fazerMagia(x, y, quantidade = 20) {
+  const simbolos = ["✦", "✧", "✺", "✶", "·"];
+
+  for (let i = 0; i < quantidade; i++) {
+    const particula = document.createElement("span");
+
+    particula.className = "particula";
+    particula.textContent =
+      simbolos[Math.floor(Math.random() * simbolos.length)];
+
+    particula.style.left = `${x}px`;
+    particula.style.top = `${y}px`;
+    particula.style.fontSize =
+      `${12 + Math.random() * 18}px`;
+
+    particula.style.setProperty(
+      "--movimento",
+      `${(Math.random() - 0.5) * 180}px`
+    );
+
+    document.body.appendChild(particula);
+
+    particula.addEventListener("animationend", () => {
+      particula.remove();
+    }, { once: true });
+  }
+}
+
+// Botão de magia da página inicial
+document.querySelector("#botao-magia").addEventListener("click", (evento) => {
+  const retangulo = evento.currentTarget.getBoundingClientRect();
+
+  fazerMagia(
+    retangulo.left + retangulo.width / 2,
+    retangulo.top + retangulo.height / 2,
+    35
+  );
+});
+
+// Lista de feitiços
+const feiticos = [
+  {
+    nome: "LUMOS!",
+    descricao:
+      "Uma luz mágica aparece! Angeliz, tente iluminar o que está escondido."
+  },
+  {
+    nome: "LEVITARE!",
+    descricao:
+      "Tudo começa a flutuar! Cuidado para não fazer a sala inteira voar."
+  },
+  {
+    nome: "FINITE MAGICA!",
+    descricao:
+      "Respire fundo e desfaça a magia antes que a confusão fique maior."
+  }
+];
+
+let feiticoAtual = 0;
+
+// Botão para revelar os feitiços
+document.querySelector("#botao-feitico").addEventListener("click", (evento) => {
+  const feitico = feiticos[feiticoAtual];
+  const resultado = document.querySelector("#resultado-feitico");
+
+  resultado.textContent =
+    `${feitico.nome} ${feitico.descricao}`;
+
+  const retangulo = evento.currentTarget.getBoundingClientRect();
+
+  fazerMagia(
+    retangulo.left + retangulo.width / 2,
+    retangulo.top + retangulo.height / 2,
+    18
+  );
+
+  feiticoAtual = (feiticoAtual + 1) % feiticos.length;
+});
+
+// Pequeno efeito mágico ao clicar na página
+document.addEventListener("click", (evento) => {
+  if (
+    evento.target.closest("a") ||
+    evento.target.closest("button")
+  ) {
+    return;
+  }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  fazerMagia(evento.clientX, evento.clientY, 5);
+});
